@@ -91,5 +91,23 @@ function sortByHeight(a) {
 
 
 // reverseInparentheses
+// Write a function that reverses characters in (possibly nested) parentheses in the input string.
+
+// Input strings will always be well-formed with matching ()s.
+// For inputString = "foo(bar)baz", the output should be
+// reverseInParentheses(inputString) = "foorabbaz";
+// For inputString = "foo(bar(baz))blim", the output should be
+// reverseInParentheses(inputString) = "foobazrabblim".
+
+function reverseInParentheses(inputString) {
+  const re = /\(([^\(\)]*)\)/g;
+  while(re.test(inputString)){
+      inputString = inputString.replace(re, function(match, capture){
+          return capture.split("").reverse().join("");
+      })
+  }
+  
+  return inputString;
+}
 
 
