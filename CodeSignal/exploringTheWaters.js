@@ -20,3 +20,30 @@ function alternatingSums(a) {
   }
   return [sum1, sum2]
 }
+
+// addBorder
+// Given a rectangular matrix of characters, add a border of asterisks(*) to it.
+//picture = ["abc",
+//           "ded"]
+// addBorder(picture) = [ "*****",
+//                        "*abc*",
+//                        "*ded*",
+//                        "*****"]
+
+function addBorder(picture) {
+  let topBottom = "";
+  for(let i = 0; i < picture[0].length; i++){
+      topBottom += "*";
+  }
+  picture.unshift(topBottom);
+  picture.push(topBottom);
+  for(let i = 0; i < picture.length; i++){
+      // at each index, I need to split into array, then unshift and push "*", then join.
+      let split = [...picture[i]];
+      split.unshift('*');
+      split.push('*');
+      picture[i] = split.join('');
+  }
+  return picture;
+}
+
