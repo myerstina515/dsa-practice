@@ -123,3 +123,5 @@ function palindromeRearranging(inputString) {
   }
   return oddCount > 1 ? false : true;
 }
+
+
