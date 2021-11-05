@@ -15,3 +15,24 @@ function arrayReplace(inputArray, elemToReplace, substitutionElem) {
   // return the array.
   return inputArray;
 }
+
+// even digits only
+// Check if all digits of the given integer are even
+// For n = 248622, the output should be
+// evenDigitsOnly(n) = true;
+// For n = 642386, the output should be
+// evenDigitsOnly(n) = false.
+
+function evenDigitsOnly(n) {
+  // I need to turn the integer into a string, then split it into an array of strings.
+  let splitString = n.toString().split('');
+  // then loop through the array
+  for(let i = 0; i < splitString.length; i++){
+      // at each index, parseInt the value and check to see if it % 2 === 0
+      if(parseInt(splitString[i]) % 2 != 0){
+          // if any value is not even, return false
+          return false
+      }
+  }
+  return true
+}
