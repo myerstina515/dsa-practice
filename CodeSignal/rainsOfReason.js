@@ -50,3 +50,24 @@ function evenDigitsOnly(n) {
 function variableName(name) {
   return /^[a-z_]\w*$/i.test(name)
 }
+
+// alphabeticShift
+// Given a string, your task is to replace each of its characters by the next one in the English alphabet; i.e. replace a with b, replace b with c, etc (z would be replaced by a).
+// For inputString = "crazy", the output should be alphabeticShift(inputString) = "dsbaz".
+
+function alphabeticShift(inputString) {
+  // I need a list of all the letters of the alphabet
+  let alphabet = 'abcdefghijklmnopqrstuvwxyza'.split('');
+  // I need to make the input string an input array
+  let inputArray = inputString.split('');
+  // I need to loop through the input array
+  for(let i = 0; i < inputArray.length; i++){
+      // for each index, I need to figure out the index of the character in the alphabet array
+      let index = alphabet.indexOf(inputArray[i]);
+      index++;
+      // I need to change the value of the input index to the next one
+      inputArray[i] = alphabet[index];
+  }
+  inputString = inputArray.join('');
+  return inputString;
+}
